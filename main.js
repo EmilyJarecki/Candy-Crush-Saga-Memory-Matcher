@@ -1,3 +1,6 @@
+hiddenCard = "https://images.fineartamerica.com/images-medium-large-5/10-pixel-art-square-mike-taylor.jpg" 
+
+
 cardArray = [
     {
         name : "Pizza", 
@@ -40,8 +43,8 @@ shuffledArray = cardArray.sort(function(){
 function createBoard(){
     for (let i = 0; i <  shuffledArray.length; i++){
         card = document.createElement("img")//creating an image of card so we are creating an image element
-        card.setAttribute("src", shuffledArray[i].img)
-        card.setAttribute("value", shuffledArray[i].name)
+        card.setAttribute("src", "https://images.fineartamerica.com/images-medium-large-5/10-pixel-art-square-mike-taylor.jpg")
+        card.setAttribute("value", i)
         card.addEventListener("click", revealCard)
         grid.appendChild(card)
     }
@@ -52,9 +55,9 @@ chosenCard = []
 console.log(chosenCard)
 
 function revealCard(){
-    let cardName = this.getAttribute("value")   //"this" is the card which is being event-listened 
-    chosenCard.push(cardName)
-    console.log(chosenCard)
+    let cardNum = this.getAttribute("value")   //"this" is the card which is being event-listened 
+    chosenCard.push(shuffledArray[cardNum].name)
+    this.setAttribute("src", shuffledArray[cardNum].img)
     if (chosenCard.length === 2){
         checkIfMatch()
     }
@@ -67,11 +70,10 @@ function checkIfMatch(){
             if (k!=j && chosenCard[j] === chosenCard[k]){
                 match = true
                 console.log("Hooray!")
-                chosenCard=[]
+                chosenCard = []
             } else {
                 console.log("Try again")
-                chosenCard=[]
-                console.log(chosenCard)
+                //need to make it revert to original pixel image
             }
         }
     }
