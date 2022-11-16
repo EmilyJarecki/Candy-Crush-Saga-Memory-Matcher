@@ -33,15 +33,18 @@ cardArray = [
     }
 ]
 const grid = document.querySelector(".grid")
+shuffledArray = cardArray.sort(function(){
+    return 0.5 - Math.random()
+})
+console.log(shuffledArray)
 
 function createBoard(){
-    for (let i = 0; i < cardArray.length; i++){
+    for (let i = 0; i <  shuffledArray.length; i++){
         card = document.createElement("img")//creating an image of card so we are creating an image element
-        card.setAttribute("src", cardArray[i].img)
-        card.setAttribute("value", cardArray[i].name)
+        card.setAttribute("src", shuffledArray[i].img)
+        card.setAttribute("value", shuffledArray[i].name)
         card.addEventListener("click", revealCard)
         grid.appendChild(card)
-
     }
 }
 createBoard()
@@ -51,7 +54,22 @@ chosenCard = []
 function revealCard(){
     let cardName = this.getAttribute("value")   //"this" is the card which is being event-listened 
     chosenCard.push(cardName)
-    // if (chosenCard.length === 2){
-    //     checkIfMatch()
-    // }
+    console.log(chosenCard)
+    if (chosenCard.length === 2){
+        checkIfMatch()
+    }
+}
+
+function checkIfMatch(){
+    match = false
+    for (j=0; j<chosenCard.length; j++){
+        for (k=j+1; k<chosenCard.length; k++){
+            if (k!=j && chosenCard[j] === chosenCard[k]){
+                match = true
+                console.log("Hooray!")
+            } else {
+                console.log("Try again")
+            }
+        }
+    }
 }
