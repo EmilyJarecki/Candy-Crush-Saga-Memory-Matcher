@@ -36,7 +36,7 @@ cardArray = [
     }
 ]
 const grid = document.querySelector(".grid")
-shuffledArray = cardArray.sort(function(){
+const shuffledArray = cardArray.sort(function(){
     return 0.5 - Math.random()
 })
 
@@ -78,3 +78,22 @@ function checkIfMatch(){
         }
     }
 }
+
+
+//TIMER
+const startTimer = document.querySelector("#startTimer")
+const tick = document.querySelector("#timerCount")
+
+function updateTicks(num) {
+    tick.textContent = num
+  }
+
+let count = Number(tick.textContent)
+
+startTimer.addEventListener("click", function(){
+    interval = setInterval(() => {
+      count--
+      updateTicks(count)
+    }, 1000)
+    startTimer.disabled = true
+  })
