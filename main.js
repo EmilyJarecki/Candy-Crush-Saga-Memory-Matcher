@@ -36,7 +36,6 @@ const grid = document.querySelector(".grid")
 shuffledArray = cardArray.sort(function(){
     return 0.5 - Math.random()
 })
-console.log(shuffledArray)
 
 function createBoard(){
     for (let i = 0; i <  shuffledArray.length; i++){
@@ -50,6 +49,7 @@ function createBoard(){
 createBoard()
 
 chosenCard = []
+console.log(chosenCard)
 
 function revealCard(){
     let cardName = this.getAttribute("value")   //"this" is the card which is being event-listened 
@@ -67,8 +67,11 @@ function checkIfMatch(){
             if (k!=j && chosenCard[j] === chosenCard[k]){
                 match = true
                 console.log("Hooray!")
+                chosenCard=[]
             } else {
                 console.log("Try again")
+                chosenCard=[]
+                console.log(chosenCard)
             }
         }
     }
