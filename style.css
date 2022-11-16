@@ -1,21 +1,6 @@
-.container {
-    border: 1px solid black;
-      width: 100px;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .row1 {
-        display: flex;
-    }
-    .row2 {
-        display: flex;
-    }
-    .row3 {
-        display: flex;
-    }
-    .row4 {
-        display: flex;
-    }
-    
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;      /*this can change. let's say, each image is 100px wide*/
+    width: 400px;
+}
