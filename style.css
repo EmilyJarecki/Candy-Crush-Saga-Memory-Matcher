@@ -1,6 +1,9 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-    height: 300px;      /*this can change. let's say, each image is 100px wide*/
+    height: 100px;      /*this can change. let's say, each image is 100px wide*/
     width: 400px;
+}
+img {
+    width: 100px;
 }
