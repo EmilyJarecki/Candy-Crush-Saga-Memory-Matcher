@@ -38,13 +38,20 @@ function createBoard(){
     for (let i = 0; i < cardArray.length; i++){
         card = document.createElement("img")//creating an image of card so we are creating an image element
         card.setAttribute("src", cardArray[i].img)
-        card.setAttribute("value", i)
+        card.setAttribute("value", cardArray[i].name)
         card.addEventListener("click", revealCard)
         grid.appendChild(card)
-    // }for (let j=0)
+
     }
 }
 createBoard()
-function revealCard(card){
-    console.log(card.name)
+
+chosenCard = []
+
+function revealCard(){
+    let cardName = this.getAttribute("value")   //"this" is the card which is being event-listened 
+    chosenCard.push(cardName)
+    // if (chosenCard.length === 2){
+    //     checkIfMatch()
+    // }
 }
