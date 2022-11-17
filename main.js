@@ -1,4 +1,15 @@
 hiddenCard = "https://images.fineartamerica.com/images-medium-large-5/10-pixel-art-square-mike-taylor.jpg" 
+const grid = document.querySelector(".grid")
+let wrongCards = document.getElementById("wrong_tries")
+let correctCards = document.getElementById("cards_won")
+
+let correct = Number(correctCards.textContent)
+let wrong = Number(wrongCards.textContent)
+
+function cardswrong(wrong) {
+    wrongCards.textContent = wrong
+}
+
 
 let cardsChosen = [] 
 let gridSpot = []
@@ -22,7 +33,6 @@ const organizedArray = [
     }
 ]
 
-const grid = document.querySelector(".grid")
 
 cardArray = organizedArray.sort(function(){
     return 0.5 - Math.random()
@@ -57,9 +67,12 @@ function checkIfMatch () {
     if (cardsChosen[0] === cardsChosen[1]){
         console.log("Hooray! It's a match")
         cardsWon.push(cardsChosen)
+        correct++
     }else{
         cards[choice1spot].setAttribute("src", hiddenCard)
         cards[choice2spot].setAttribute("src", hiddenCard)
+        wrong++
+        cardswrong(wrong)
         console.log("try again")
     }
     cardsChosen = []
