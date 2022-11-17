@@ -1,7 +1,9 @@
 hiddenCard = "https://images.fineartamerica.com/images-medium-large-5/10-pixel-art-square-mike-taylor.jpg" 
 
-
-cardArray = [
+let cardsChosen = [] 
+let cardsChosenId = []
+let cardsWon=[]
+const organizedArray = [
     {
         name : "Pizza", 
         img : "https://t4.ftcdn.net/jpg/02/11/55/17/360_F_211551718_Ol7eOQYNDK5S8pbEHMkagk9kbdYTJ2iX.jpg"
@@ -35,65 +37,91 @@ cardArray = [
         img : "https://media.istockphoto.com/id/1271917509/vector/illustration-of-pancake-illustration-like-hand-drawn-illustration-with-ink-and-brush.jpg?s=612x612&w=0&k=20&c=YmaCu5FSBMxuTzID0173PZ6AfsBy4oj-mOjOZHhms_Y="
     }
 ]
+
 const grid = document.querySelector(".grid")
-const shuffledArray = cardArray.sort(function(){
+
+cardArray = organizedArray.sort(function(){
     return 0.5 - Math.random()
 })
 
 function createBoard(){
-    for (let i = 0; i <  shuffledArray.length; i++){
-        card = document.createElement("img")//creating an image of card so we are creating an image element
-        card.setAttribute("src", "https://images.fineartamerica.com/images-medium-large-5/10-pixel-art-square-mike-taylor.jpg")
+    for (let i = 0; i <  cardArray.length; i++){
+        let card = document.createElement("img")//creating an image of card so we are creating an image element
+        card.setAttribute("src", hiddenCard)
         card.setAttribute("value", i)
-        card.addEventListener("click", revealCard)
+        // card.setAttribute("name", cardArray[i].name)
+        // shuffledArray[i].index = i
+        //ADD CLASS TO QUERY ALL CARDS
+        // card.setAttribute("class", "card")
         grid.appendChild(card)
+        card.addEventListener("click", flipcard)
     }
 }
+
 createBoard()
 
-chosenCard = []
-console.log(chosenCard)
-
-function revealCard(){
-    let cardNum = this.getAttribute("value")   //"this" is the card which is being event-listened 
-    chosenCard.push(shuffledArray[cardNum].name)
-    this.setAttribute("src", shuffledArray[cardNum].img)
-    if (chosenCard.length === 2){
-        checkIfMatch()
+function flipcard(){
+    let cardId = this.getAttribute("value")//"this" is the card which is being event-listened //"value"=index position
+    // this.removeEventListener("click", flipcard)//DOESN'T ALLLOW THE BUTTON TO BE CLICKED AGAIN
+    cardsChosen.push(cardArray[cardId].name)//necessary for comparing if they're a match
+    // console.log(cardArray[cardId].name)//gives me the name ex. "Hot Dog"
+    cardsChosenId.push(cardId)//necessary for determining position on grid
+    console.log(cardId)//gives me the index number 
+    console.log(cardsChosen)
+    console.log(cardsChosenId)
+    this.setAttribute("src", cardArray[cardId].img)
+    if (cardsChosen.length === 2){
+        setTimeout(checkIfMatch, 800)//if there is no interval, there is 0 seconds the amount of time the second image is displayed
     }
 }
 
-function checkIfMatch(){
-    match = false
-    for (j=0; j<chosenCard.length; j++){
-        for (k=j+1; k<chosenCard.length; k++){
-            if (k!=j && chosenCard[j] === chosenCard[k]){
-                match = true
-                console.log("Hooray!")
-                chosenCard = []
-            } else {
-                console.log("Try again")
-                //need to make it revert to original pixel image
-            }
-        }
+function checkIfMatch () {
+    let cards = document.querySelectorAll("img")
+    const choiceOneId = cardsChosenId[0]
+    const choiceTwoId = cardsChosenId[1]
+    if (cardsChosen[0] === cardsChosen[1]){
+        console.log("Hooray! It's a match")
+        cardsWon.push(cardsChosen)
+        console.log(cardsWon)
+    }else{
+        cards[choiceOneId].setAttribute("src", hiddenCard)
+        cards[choiceTwoId].setAttribute("src", hiddenCard)
+        console.log("try again")
+    }
+    cardsChosen = []//resetting array so that it limits us at 2 clicks
+    cardsChosenId = []
+    if (cardsWon.length === organizedArray.length/2){
+        alert("Congratulations! You've found all of them!")
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //TIMER
-const startTimer = document.querySelector("#startTimer")
-const tick = document.querySelector("#timerCount")
+// const startTimer = document.querySelector("#startTimer")
+// const tick = document.querySelector("#timerCount")
 
-function updateTicks(num) {
-    tick.textContent = num
-  }
+// function updateTicks(num) {
+//     tick.textContent = num
+//   }
 
-let count = Number(tick.textContent)
+// let count = Number(tick.textContent)
 
-startTimer.addEventListener("click", function(){
-    interval = setInterval(() => {
-      count--
-      updateTicks(count)
-    }, 1000)
-    startTimer.disabled = true
-  })
+// startTimer.addEventListener("click", function(){
+//     interval = setInterval(() => {
+//       count--
+//       updateTicks(count)
+//     }, 1000)
+//     startTimer.disabled = true
+//   })
