@@ -1,7 +1,7 @@
 hiddenCard = "https://images.fineartamerica.com/images-medium-large-5/10-pixel-art-square-mike-taylor.jpg" 
 
 let cardsChosen = [] 
-let cardsChosenId = []
+let gridSpot = []
 let cardsWon=[]
 const organizedArray = [
     {name : "Pizza", img : "https://t4.ftcdn.net/jpg/02/11/55/17/360_F_211551718_Ol7eOQYNDK5S8pbEHMkagk9kbdYTJ2iX.jpg"
@@ -34,35 +34,37 @@ for (let i = 0; i <  cardArray.length; i++){
     card.setAttribute("src", hiddenCard)
     card.setAttribute("value", i)
     grid.appendChild(card)
-    card.addEventListener("click", (flipcard))
+    card.addEventListener("click", (revealCard))
 }
 
+function revealCard(){
+    
+    let location = this.getAttribute("value")//"this" is the card which is being event-listened //"value"=index position
 
-function flipcard(){
-    let cardId = this.getAttribute("value")//"this" is the card which is being event-listened //"value"=index position
-    cardsChosen.push(cardArray[cardId].name)//necessary for comparing if they're a match
-    cardsChosenId.push(cardId)//necessary for determining position on grid
-    this.setAttribute("src", cardArray[cardId].img)
+    cardsChosen.push(cardArray[location].name)//necessary for comparing if they're a match
+    gridSpot.push(location)//necessary for determining position on grid
+
+    this.setAttribute("src", cardArray[location].img)//changing the image
     if (cardsChosen.length === 2){
-        setTimeout(checkIfMatch, 800)//if there is no interval, there is 0 seconds the amount of time the second image is displayed
+        setTimeout(checkIfMatch, 500)//if there is no interval, there is 0 seconds the amount of time the second image is displayed
     }
 }
 
 function checkIfMatch () {
     let cards = document.querySelectorAll("img")
-    const choiceOneId = cardsChosenId[0]
-    const choiceTwoId = cardsChosenId[1]
+    const choice1spot = gridSpot[0]
+    const choice2spot = gridSpot[1]
     if (cardsChosen[0] === cardsChosen[1]){
         console.log("Hooray! It's a match")
         cardsWon.push(cardsChosen)
     }else{
-        cards[choiceOneId].setAttribute("src", hiddenCard)
-        cards[choiceTwoId].setAttribute("src", hiddenCard)
+        cards[choice1spot].setAttribute("src", hiddenCard)
+        cards[choice2spot].setAttribute("src", hiddenCard)
         console.log("try again")
     }
     cardsChosen = []
-    cardsChosenId = []
-    if (cardsWon.length === organizedArray.length/2){
+    gridSpot = []
+    if (cardsWon.length === cardArray.length/2){
         alert("Congratulations! You've found all of them!")
     }
 }
