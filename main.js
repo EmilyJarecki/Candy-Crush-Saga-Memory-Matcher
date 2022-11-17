@@ -7,28 +7,50 @@ let correct = Number(correctCards.textContent)
 let wrong = Number(wrongCards.textContent)
 
 
-
-
 let cardsChosen = [] 
 let gridSpot = []
 let cardsWon=[]
 const organizedArray = [
-    {name : "Pizza", img : "https://t4.ftcdn.net/jpg/02/11/55/17/360_F_211551718_Ol7eOQYNDK5S8pbEHMkagk9kbdYTJ2iX.jpg"
+    {name : "Pizza", img : "https://therecipecritic.com/wp-content/uploads/2019/05/besthomemadepizzahero.jpg"
     },
-    {name : "Pizza", img : "https://t4.ftcdn.net/jpg/02/11/55/17/360_F_211551718_Ol7eOQYNDK5S8pbEHMkagk9kbdYTJ2iX.jpg"
+    {name : "Pizza", img : "https://therecipecritic.com/wp-content/uploads/2019/05/besthomemadepizzahero.jpg"
     },
-    {name : "Hot Dog", img : "https://media.istockphoto.com/id/1146404440/vector/hot-dog-with-mustard-hand-drawing.jpg?s=612x612&w=0&k=20&c=b4tmD8q4AClUIQZF5zjto04VW9LTyqzgpt8HuFUGuVM="
+    {name : "Mango", img : "https://www.agroponiente.com/wp-content/uploads/2021/08/mango-Agroponiente.png"
     },
-    {name : "Hot Dog", img : "https://media.istockphoto.com/id/1146404440/vector/hot-dog-with-mustard-hand-drawing.jpg?s=612x612&w=0&k=20&c=b4tmD8q4AClUIQZF5zjto04VW9LTyqzgpt8HuFUGuVM="
+    {name : "Mango", img : "https://www.agroponiente.com/wp-content/uploads/2021/08/mango-Agroponiente.png"
     },
-    {name : "Ice Cream", img : "https://media.istockphoto.com/id/1244822316/vector/ice-cream-on-a-bowl.jpg?s=612x612&w=0&k=20&c=EJ-SzFyOvJPYN0bf9X1DNCtdZBJ0DTShsTnRn4xonO8="
+    {name : "Ice Cream", img : "https://images.news18.com/ibnlive/uploads/2022/01/ice-cream.jpg"
     },
-    {name : "Ice Cream", img : "https://media.istockphoto.com/id/1244822316/vector/ice-cream-on-a-bowl.jpg?s=612x612&w=0&k=20&c=EJ-SzFyOvJPYN0bf9X1DNCtdZBJ0DTShsTnRn4xonO8="
+    {name : "Ice Cream", img : "https://images.news18.com/ibnlive/uploads/2022/01/ice-cream.jpg"
     },
-    {name : "Pancakes", img : "https://media.istockphoto.com/id/1271917509/vector/illustration-of-pancake-illustration-like-hand-drawn-illustration-with-ink-and-brush.jpg?s=612x612&w=0&k=20&c=YmaCu5FSBMxuTzID0173PZ6AfsBy4oj-mOjOZHhms_Y="
+    {name : "Pancakes", img : "https://assets.bonappetit.com/photos/622a6c4f7d1e521b467c3d0b/1:1/w_2360,h_2360,c_limit/20220307%20A%20SKEPTIC%20TRIES%20PANCAKES%20LEDE.jpg"
     },
-    {name : "Pancakes", img : "https://media.istockphoto.com/id/1271917509/vector/illustration-of-pancake-illustration-like-hand-drawn-illustration-with-ink-and-brush.jpg?s=612x612&w=0&k=20&c=YmaCu5FSBMxuTzID0173PZ6AfsBy4oj-mOjOZHhms_Y="
-    }
+    {name : "Pancakes", img : "https://assets.bonappetit.com/photos/622a6c4f7d1e521b467c3d0b/1:1/w_2360,h_2360,c_limit/20220307%20A%20SKEPTIC%20TRIES%20PANCAKES%20LEDE.jpg"
+    },
+    {name : "Waffles", img : "https://www.momontimeout.com/wp-content/uploads/2021/10/waffle-recipe-square-500x500.jpeg"
+    },
+    {name : "Waffles", img : "https://www.momontimeout.com/wp-content/uploads/2021/10/waffle-recipe-square-500x500.jpeg"
+    },
+    {name : "Watermelon", img : "https://www.simplyrecipes.com/thmb/o5vKA2D5VB31GrgQjvTnTQtrl4E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-HT-Cut-Watermelon-LEAD-3-5002c6a583bf4821a92bb7cb640bdb03.jpg"
+    },
+    {name : "Watermelon", img : "https://www.simplyrecipes.com/thmb/o5vKA2D5VB31GrgQjvTnTQtrl4E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-HT-Cut-Watermelon-LEAD-3-5002c6a583bf4821a92bb7cb640bdb03.jpg"
+    },
+    {name : "Taco", img : "https://www.jocooks.com/wp-content/uploads/2020/08/ground-beef-tacos-1-11.jpg"
+    },
+    {name : "Taco", img : "https://www.jocooks.com/wp-content/uploads/2020/08/ground-beef-tacos-1-11.jpg"
+    },
+    {name : "Cappucino", img : "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
+    },
+    {name : "Cappucino", img : "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
+    },
+    {name : "Matcha", img : "https://cdn.loveandlemons.com/wp-content/uploads/2020/04/matcha.jpg"
+    },
+    {name : "Matcha", img : "https://cdn.loveandlemons.com/wp-content/uploads/2020/04/matcha.jpg"
+    },
+    {name : "Oreo Cupcake", img : "https://chocolatecoveredkatie.com/wp-content/uploads/2022/08/Oreo-Cookie-Cupcakes-With-Cookies-And-Cream-Frosting.jpg"
+    },
+    {name : "Oreo Cupcake", img : "https://chocolatecoveredkatie.com/wp-content/uploads/2022/08/Oreo-Cookie-Cupcakes-With-Cookies-And-Cream-Frosting.jpg"
+    },
 ]
 
 
@@ -46,15 +68,12 @@ for (let i = 0; i <  cardArray.length; i++){
 }
 
 function revealCard(){
-    
     let location = this.getAttribute("value")//"this" is the card which is being event-listened //"value"=index position
-
     cardsChosen.push(cardArray[location].name)//necessary for comparing if they're a match
     gridSpot.push(location)//necessary for determining position on grid
-
     this.setAttribute("src", cardArray[location].img)//changing the image
     if (cardsChosen.length === 2){
-        setTimeout(checkIfMatch, 500)//if there is no interval, there is 0 seconds the amount of time the second image is displayed
+        setTimeout(checkIfMatch, 1000)//if there is no interval, there is 0 seconds the amount of time the second image is displayed
     }
 }
 
@@ -87,32 +106,3 @@ function checkIfMatch () {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//TIMER
-// const startTimer = document.querySelector("#startTimer")
-// const tick = document.querySelector("#timerCount")
-
-// function updateTicks(num) {
-//     tick.textContent = num
-//   }
-
-// let count = Number(tick.textContent)
-
-// startTimer.addEventListener("click", function(){
-//     interval = setInterval(() => {
-//       count--
-//       updateTicks(count)
-//     }, 1000)
-//     startTimer.disabled = true
-//   })

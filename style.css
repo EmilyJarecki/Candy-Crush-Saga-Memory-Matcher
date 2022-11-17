@@ -1,13 +1,13 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-    height: 200px;      /*this can change. let's say, each image is 100px wide*/
-    width: 500px;
+    height: 400px;      /*this can change. let's say, each image is 100px wide*/
+    width: 800px;
 }
 
 img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: 1px;
 }
 
