@@ -6,9 +6,7 @@ let correctCards = document.getElementById("cards_won")
 let correct = Number(correctCards.textContent)
 let wrong = Number(wrongCards.textContent)
 
-function cardswrong(wrong) {
-    wrongCards.textContent = wrong
-}
+
 
 
 let cardsChosen = [] 
@@ -60,20 +58,26 @@ function revealCard(){
     }
 }
 
+function cardswrong(wrong) {
+    wrongCards.textContent = wrong
+}
+function correctcards(correct) {
+    correctCards.textContent = correct
+}
+
 function checkIfMatch () {
     let cards = document.querySelectorAll("img")
     const choice1spot = gridSpot[0]
     const choice2spot = gridSpot[1]
     if (cardsChosen[0] === cardsChosen[1]){
-        console.log("Hooray! It's a match")
         cardsWon.push(cardsChosen)
         correct++
+        correctcards(correct)
     }else{
         cards[choice1spot].setAttribute("src", hiddenCard)
         cards[choice2spot].setAttribute("src", hiddenCard)
         wrong++
         cardswrong(wrong)
-        console.log("try again")
     }
     cardsChosen = []
     gridSpot = []
