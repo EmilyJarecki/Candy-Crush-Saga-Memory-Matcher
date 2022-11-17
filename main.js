@@ -4,37 +4,21 @@ let cardsChosen = []
 let cardsChosenId = []
 let cardsWon=[]
 const organizedArray = [
-    {
-        name : "Pizza", 
-        img : "https://t4.ftcdn.net/jpg/02/11/55/17/360_F_211551718_Ol7eOQYNDK5S8pbEHMkagk9kbdYTJ2iX.jpg"
+    {name : "Pizza", img : "https://t4.ftcdn.net/jpg/02/11/55/17/360_F_211551718_Ol7eOQYNDK5S8pbEHMkagk9kbdYTJ2iX.jpg"
     },
-    {
-        name : "Pizza", 
-        img : "https://t4.ftcdn.net/jpg/02/11/55/17/360_F_211551718_Ol7eOQYNDK5S8pbEHMkagk9kbdYTJ2iX.jpg"
+    {name : "Pizza", img : "https://t4.ftcdn.net/jpg/02/11/55/17/360_F_211551718_Ol7eOQYNDK5S8pbEHMkagk9kbdYTJ2iX.jpg"
     },
-    {
-        name : "Hot Dog", 
-        img : "https://media.istockphoto.com/id/1146404440/vector/hot-dog-with-mustard-hand-drawing.jpg?s=612x612&w=0&k=20&c=b4tmD8q4AClUIQZF5zjto04VW9LTyqzgpt8HuFUGuVM="
+    {name : "Hot Dog", img : "https://media.istockphoto.com/id/1146404440/vector/hot-dog-with-mustard-hand-drawing.jpg?s=612x612&w=0&k=20&c=b4tmD8q4AClUIQZF5zjto04VW9LTyqzgpt8HuFUGuVM="
     },
-    {
-        name : "Hot Dog", 
-        img : "https://media.istockphoto.com/id/1146404440/vector/hot-dog-with-mustard-hand-drawing.jpg?s=612x612&w=0&k=20&c=b4tmD8q4AClUIQZF5zjto04VW9LTyqzgpt8HuFUGuVM="
+    {name : "Hot Dog", img : "https://media.istockphoto.com/id/1146404440/vector/hot-dog-with-mustard-hand-drawing.jpg?s=612x612&w=0&k=20&c=b4tmD8q4AClUIQZF5zjto04VW9LTyqzgpt8HuFUGuVM="
     },
-    {
-        name : "Ice Cream",
-        img : "https://media.istockphoto.com/id/1244822316/vector/ice-cream-on-a-bowl.jpg?s=612x612&w=0&k=20&c=EJ-SzFyOvJPYN0bf9X1DNCtdZBJ0DTShsTnRn4xonO8="
+    {name : "Ice Cream", img : "https://media.istockphoto.com/id/1244822316/vector/ice-cream-on-a-bowl.jpg?s=612x612&w=0&k=20&c=EJ-SzFyOvJPYN0bf9X1DNCtdZBJ0DTShsTnRn4xonO8="
     },
-    {
-        name : "Ice Cream",
-        img : "https://media.istockphoto.com/id/1244822316/vector/ice-cream-on-a-bowl.jpg?s=612x612&w=0&k=20&c=EJ-SzFyOvJPYN0bf9X1DNCtdZBJ0DTShsTnRn4xonO8="
+    {name : "Ice Cream", img : "https://media.istockphoto.com/id/1244822316/vector/ice-cream-on-a-bowl.jpg?s=612x612&w=0&k=20&c=EJ-SzFyOvJPYN0bf9X1DNCtdZBJ0DTShsTnRn4xonO8="
     },
-    {
-        name : "Pancakes",
-        img : "https://media.istockphoto.com/id/1271917509/vector/illustration-of-pancake-illustration-like-hand-drawn-illustration-with-ink-and-brush.jpg?s=612x612&w=0&k=20&c=YmaCu5FSBMxuTzID0173PZ6AfsBy4oj-mOjOZHhms_Y="
+    {name : "Pancakes", img : "https://media.istockphoto.com/id/1271917509/vector/illustration-of-pancake-illustration-like-hand-drawn-illustration-with-ink-and-brush.jpg?s=612x612&w=0&k=20&c=YmaCu5FSBMxuTzID0173PZ6AfsBy4oj-mOjOZHhms_Y="
     },
-    {
-        name : "Pancakes",
-        img : "https://media.istockphoto.com/id/1271917509/vector/illustration-of-pancake-illustration-like-hand-drawn-illustration-with-ink-and-brush.jpg?s=612x612&w=0&k=20&c=YmaCu5FSBMxuTzID0173PZ6AfsBy4oj-mOjOZHhms_Y="
+    {name : "Pancakes", img : "https://media.istockphoto.com/id/1271917509/vector/illustration-of-pancake-illustration-like-hand-drawn-illustration-with-ink-and-brush.jpg?s=612x612&w=0&k=20&c=YmaCu5FSBMxuTzID0173PZ6AfsBy4oj-mOjOZHhms_Y="
     }
 ]
 
@@ -44,31 +28,20 @@ cardArray = organizedArray.sort(function(){
     return 0.5 - Math.random()
 })
 
-function createBoard(){
-    for (let i = 0; i <  cardArray.length; i++){
-        let card = document.createElement("img")//creating an image of card so we are creating an image element
-        card.setAttribute("src", hiddenCard)
-        card.setAttribute("value", i)
-        // card.setAttribute("name", cardArray[i].name)
-        // shuffledArray[i].index = i
-        //ADD CLASS TO QUERY ALL CARDS
-        // card.setAttribute("class", "card")
-        grid.appendChild(card)
-        card.addEventListener("click", flipcard)
-    }
+//create the grid
+for (let i = 0; i <  cardArray.length; i++){
+    let card = document.createElement("img")//creating an image of card so we are creating an image element
+    card.setAttribute("src", hiddenCard)
+    card.setAttribute("value", i)
+    grid.appendChild(card)
+    card.addEventListener("click", (flipcard))
 }
 
-createBoard()
 
 function flipcard(){
     let cardId = this.getAttribute("value")//"this" is the card which is being event-listened //"value"=index position
-    // this.removeEventListener("click", flipcard)//DOESN'T ALLLOW THE BUTTON TO BE CLICKED AGAIN
     cardsChosen.push(cardArray[cardId].name)//necessary for comparing if they're a match
-    // console.log(cardArray[cardId].name)//gives me the name ex. "Hot Dog"
     cardsChosenId.push(cardId)//necessary for determining position on grid
-    console.log(cardId)//gives me the index number 
-    console.log(cardsChosen)
-    console.log(cardsChosenId)
     this.setAttribute("src", cardArray[cardId].img)
     if (cardsChosen.length === 2){
         setTimeout(checkIfMatch, 800)//if there is no interval, there is 0 seconds the amount of time the second image is displayed
@@ -82,13 +55,12 @@ function checkIfMatch () {
     if (cardsChosen[0] === cardsChosen[1]){
         console.log("Hooray! It's a match")
         cardsWon.push(cardsChosen)
-        console.log(cardsWon)
     }else{
         cards[choiceOneId].setAttribute("src", hiddenCard)
         cards[choiceTwoId].setAttribute("src", hiddenCard)
         console.log("try again")
     }
-    cardsChosen = []//resetting array so that it limits us at 2 clicks
+    cardsChosen = []
     cardsChosenId = []
     if (cardsWon.length === organizedArray.length/2){
         alert("Congratulations! You've found all of them!")
