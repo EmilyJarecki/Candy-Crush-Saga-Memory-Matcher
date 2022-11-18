@@ -21,13 +21,9 @@ const organizedArray = [
     },
     {name : "Red", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/a/ae/Red_striped_candy_HQ.png/revision/latest?cb=20130820041726"
     },
-    {name : "Orange", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/9/91/OrangecandyHTML5.png/revision/latest/scale-to-width-down/65?cb=20211029175615"
+    {name : "Spin", img : "https://flyclipart.com/thumb2/crush-of-candy-candy-candy-christmas-candy-597841.png"
     },
-    {name : "Orange", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/9/91/OrangecandyHTML5.png/revision/latest/scale-to-width-down/65?cb=20211029175615"
-    },
-    {name : "Yellow", img : "https://us.v-cdn.net/6030983/uploads/01QU6PF2HTWM/plain-yellow-small.png"
-    },
-    {name : "Yellow", img : "https://us.v-cdn.net/6030983/uploads/01QU6PF2HTWM/plain-yellow-small.png"
+    {name : "Spin", img : "https://flyclipart.com/thumb2/crush-of-candy-candy-candy-christmas-candy-597841.png"
     },
     {name : "Green", img : "https://static.wikia.nocookie.net/candy-crush-jelly/images/f/f1/Greenfish.png/revision/latest?cb=20220118112705"
     },
@@ -70,6 +66,7 @@ function revealCard(){
         setTimeout(checkIfMatch, 1000)//if there is no interval, there is 0 seconds the amount of time the second image is displayed
     }
 }
+let win = document.getElementsByClassName("winAnnouncement")
 
 function checkIfMatch () {
     let cards = document.querySelectorAll("img")
@@ -91,9 +88,8 @@ function checkIfMatch () {
         alert("Congratulations! You've found all of them!")
     }
 }
+// document.querySelector("button").addEventListener("click", reset)
 
-document.querySelector("button").addEventListener("click", reset)
+// function reset(){
 
-function reset(){
-
-}
+// }

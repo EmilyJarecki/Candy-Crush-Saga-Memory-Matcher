@@ -3,7 +3,7 @@
 }
 
 .grid {
-    height: 550px;      /*this can change. let's say, each image is 100px wide*/
+    height: 450px;      /*this can change. let's say, each image is 100px wide*/
     width: 680px;
     display: flex;
     flex-wrap: wrap;
