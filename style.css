@@ -1,16 +1,31 @@
 .grid {
+    height: 600px;      /*this can change. let's say, each image is 100px wide*/
+    width: 750px;
     display: flex;
     flex-wrap: wrap;
-    height: 400px;      /*this can change. let's say, each image is 100px wide*/
-    width: 800px;
+    text-align: justify;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 200px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+}
+.pair_metric{
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
 }
 
 img {
     width: 150px;
     height: 150px;
-    margin: 1px;
+    margin: 10px;
+    border: 5px solid rgb(0, 0, 0);
 }
 
 body{
     background-color: blanchedalmond;
+    text-align: center;
 }

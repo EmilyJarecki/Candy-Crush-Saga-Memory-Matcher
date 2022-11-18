@@ -6,19 +6,17 @@ let correctCards = document.getElementById("cards_won")
 let correct = Number(correctCards.textContent)
 let wrong = Number(wrongCards.textContent)
 
+function cardswrong(wrong) {
+    wrongCards.textContent = wrong
+}
+function correctcards(correct) {
+    correctCards.textContent = correct
+}
 
 let cardsChosen = [] 
 let gridSpot = []
 let cardsWon=[]
 const organizedArray = [
-    {name : "Pizza", img : "https://therecipecritic.com/wp-content/uploads/2019/05/besthomemadepizzahero.jpg"
-    },
-    {name : "Pizza", img : "https://therecipecritic.com/wp-content/uploads/2019/05/besthomemadepizzahero.jpg"
-    },
-    {name : "Mango", img : "https://www.agroponiente.com/wp-content/uploads/2021/08/mango-Agroponiente.png"
-    },
-    {name : "Mango", img : "https://www.agroponiente.com/wp-content/uploads/2021/08/mango-Agroponiente.png"
-    },
     {name : "Ice Cream", img : "https://images.news18.com/ibnlive/uploads/2022/01/ice-cream.jpg"
     },
     {name : "Ice Cream", img : "https://images.news18.com/ibnlive/uploads/2022/01/ice-cream.jpg"
@@ -35,17 +33,9 @@ const organizedArray = [
     },
     {name : "Watermelon", img : "https://www.simplyrecipes.com/thmb/o5vKA2D5VB31GrgQjvTnTQtrl4E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-HT-Cut-Watermelon-LEAD-3-5002c6a583bf4821a92bb7cb640bdb03.jpg"
     },
-    {name : "Taco", img : "https://www.jocooks.com/wp-content/uploads/2020/08/ground-beef-tacos-1-11.jpg"
-    },
-    {name : "Taco", img : "https://www.jocooks.com/wp-content/uploads/2020/08/ground-beef-tacos-1-11.jpg"
-    },
     {name : "Cappucino", img : "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
     },
     {name : "Cappucino", img : "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-07-Cappuccino%2FCappuccino"
-    },
-    {name : "Matcha", img : "https://cdn.loveandlemons.com/wp-content/uploads/2020/04/matcha.jpg"
-    },
-    {name : "Matcha", img : "https://cdn.loveandlemons.com/wp-content/uploads/2020/04/matcha.jpg"
     },
     {name : "Oreo Cupcake", img : "https://chocolatecoveredkatie.com/wp-content/uploads/2022/08/Oreo-Cookie-Cupcakes-With-Cookies-And-Cream-Frosting.jpg"
     },
@@ -75,13 +65,6 @@ function revealCard(){
     if (cardsChosen.length === 2){
         setTimeout(checkIfMatch, 1000)//if there is no interval, there is 0 seconds the amount of time the second image is displayed
     }
-}
-
-function cardswrong(wrong) {
-    wrongCards.textContent = wrong
-}
-function correctcards(correct) {
-    correctCards.textContent = correct
 }
 
 function checkIfMatch () {
