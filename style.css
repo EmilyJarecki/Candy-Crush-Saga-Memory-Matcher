@@ -1,6 +1,10 @@
+.background {
+
+}
+
 .grid {
-    height: 600px;      /*this can change. let's say, each image is 100px wide*/
-    width: 750px;
+    height: 550px;      /*this can change. let's say, each image is 100px wide*/
+    width: 680px;
     display: flex;
     flex-wrap: wrap;
     text-align: justify;
@@ -9,23 +13,34 @@
     right: 0;
     top: 200px;
     margin: auto;
-    background-color: white;
     padding: 30px;
 }
 .pair_metric{
-    display: flex;
-    flex-direction: row;
     font-size: 30px;
 }
 
 img {
     width: 150px;
     height: 150px;
-    margin: 10px;
-    border: 5px solid rgb(0, 0, 0);
+    margin: 0px;
+
 }
 
 body{
-    background-color: blanchedalmond;
+    background-color: white;
     text-align: center;
+    background-image: url("https://wallpapercave.com/wp/wp2347583.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.reset{
+    background-color:rgb(230, 7, 7);
+    color: aliceblue;
+    margin: 20px 0 0 0;
+    width: 50px;
+    height: 50px;
+}
+button{
+    box-shadow: 3px 5px 0 rgba(0,0,0,0.3),3px 5px 0 var(--color-bar, #ff3333),8px 7px 0 2px rgba(0,0,0,0.24);
+    border-radius: 50%;
 }
