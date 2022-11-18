@@ -25,9 +25,9 @@ const organizedArray = [
     },
     {name : "Spin", img : "https://androidgamingfox.com/wp-content/uploads/2021/09/candy_crush_saga_coconut_wheel.webp"
     },
-    {name : "Green", img : "https://static.wikia.nocookie.net/candy-crush-jelly/images/f/f1/Greenfish.png/revision/latest?cb=20220118112705"
+    {name : "Green", img : "https://static.wikia.nocookie.net/candy-crush-jelly/images/f/f1/Greenfish.png"
     },
-    {name : "Green", img : "https://static.wikia.nocookie.net/candy-crush-jelly/images/f/f1/Greenfish.png/revision/latest?cb=20220118112705"
+    {name : "Green", img : "https://static.wikia.nocookie.net/candy-crush-jelly/images/f/f1/Greenfish.png"
     },
     {name : "Blue", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/2/2d/BluecandyHTML5.png/revision/latest?cb=20211029175618"
     },
