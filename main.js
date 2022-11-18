@@ -17,9 +17,9 @@ let cardsChosen = []
 let gridSpot = []
 let cardsWon=[]
 const organizedArray = [
-    {name : "Red", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/a/ae/Red_striped_candy_HQ.png/revision/latest?cb=20130820041726"
+    {name : "Red", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/a/ae/Red_striped_candy_HQ.png"
     },
-    {name : "Red", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/a/ae/Red_striped_candy_HQ.png/revision/latest?cb=20130820041726"
+    {name : "Red", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/a/ae/Red_striped_candy_HQ.png"
     },
     {name : "Spin", img : "https://androidgamingfox.com/wp-content/uploads/2021/09/candy_crush_saga_coconut_wheel.webp"
     },
@@ -29,17 +29,17 @@ const organizedArray = [
     },
     {name : "Green", img : "https://static.wikia.nocookie.net/candy-crush-jelly/images/f/f1/Greenfish.png"
     },
-    {name : "Blue", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/2/2d/BluecandyHTML5.png/revision/latest?cb=20211029175618"
+    {name : "Blue", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/2/2d/BluecandyHTML5.png"
     },
-    {name : "Blue", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/2/2d/BluecandyHTML5.png/revision/latest?cb=20211029175618"
+    {name : "Blue", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/2/2d/BluecandyHTML5.png"
     },
-    {name : "Purple", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/e/eb/PurplecandyHTML5.png/revision/latest?cb=20211029175614"
+    {name : "Purple", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/e/eb/PurplecandyHTML5.png"
     },
-    {name : "Purple", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/e/eb/PurplecandyHTML5.png/revision/latest?cb=20211029175614"
+    {name : "Purple", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/e/eb/PurplecandyHTML5.png"
     },
-    {name : "Color Bomb", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/7/74/Colour_Bomb_new.png/revision/latest/scale-to-width-down/250?cb=20200604143127"
+    {name : "Color Bomb", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/7/74/Colour_Bomb_new.png"
     },
-    {name : "Color Bomb", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/7/74/Colour_Bomb_new.png/revision/latest/scale-to-width-down/250?cb=20200604143127"
+    {name : "Color Bomb", img : "https://static.wikia.nocookie.net/candy-crush-saga/images/7/74/Colour_Bomb_new.png"
     },
 ]
 
