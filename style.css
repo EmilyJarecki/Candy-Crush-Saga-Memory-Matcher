@@ -1,7 +1,7 @@
-.background {
-
+.title {
+    font-size: 60px;
+    color: white
 }
-
 .grid {
     height: 450px;      /*this can change. let's say, each image is 100px wide*/
     width: 680px;
@@ -14,9 +14,12 @@
     top: 200px;
     margin: auto;
     padding: 30px;
+    margin-top: 30px;
 }
 .pair_metric{
-    font-size: 30px;
+    font-size: 35px;
+    margin: 0;
+    color: white;
 }
 
 img {
@@ -32,6 +35,8 @@ body{
     background-image: url("https://wallpapercave.com/wp/wp2347583.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    font-family: 'Rochester', cursive;
+
 }
 .reset{
     background-color:rgb(230, 7, 7);
