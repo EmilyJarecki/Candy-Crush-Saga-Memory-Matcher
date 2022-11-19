@@ -88,8 +88,3 @@ function checkIfMatch () {
         alert("Congratulations! You've found all of them!")
     }
 }
-// document.querySelector("button").addEventListener("click", reset)
-
-// function reset(){
-
-// }
