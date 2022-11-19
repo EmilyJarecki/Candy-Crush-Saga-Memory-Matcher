@@ -2,6 +2,16 @@
     font-size: 60px;
     color: white
 }
+
+body{
+    background-color: white;
+    text-align: center;
+    background-image: url("https://wallpapercave.com/wp/wp2347583.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Rochester', cursive;
+}
+
 .grid {
     height: 450px;      
     width: 680px;
@@ -16,6 +26,7 @@
     padding: 30px;
     margin-top: 30px;
 }
+
 .pair_metric{
     font-size: 35px;
     margin: 0;
@@ -26,15 +37,4 @@ img {
     width: 150px;
     height: 150px;
     margin: 0px;
-
-}
-
-body{
-    background-color: white;
-    text-align: center;
-    background-image: url("https://wallpapercave.com/wp/wp2347583.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    font-family: 'Rochester', cursive;
-
 }
