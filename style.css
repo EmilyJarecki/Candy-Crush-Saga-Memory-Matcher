@@ -8,7 +8,9 @@ body{
     text-align: center;
     background-image: url("https://wallpapercave.com/wp/wp2347583.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-family: 'Rochester', cursive;
 }
 
