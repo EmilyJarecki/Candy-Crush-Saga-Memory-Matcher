@@ -13,6 +13,9 @@
 
 # Getting Started
 - Game Link: file:///Users/emilyjarecki/SEI/projects/MemoryMatcher/index.html 
+<p>
+<a href="file:///Users/emilyjarecki/SEI/projects/MemoryMatcher/index.html" target="_blank">GameLink</a>
+</p>
 
 # Next Steps
 - Create a timer so that the player has x number of time to complete the game
